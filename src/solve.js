@@ -11,7 +11,7 @@ module.exports = inputPuzzle => new Promise((resolve, reject) => {
   let newMap
   let mainIterations = 0
   let stage1Iterations = 0
-  
+
   while (Object.keys(map).length) {
     // stage 1: get the obvious stuff
     while (Object.keys(map).length) {

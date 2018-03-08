@@ -1,4 +1,4 @@
-/** 
+/**
  * Logs input stream to console
 */
 module.exports = inputPuzzle => {

@@ -1,4 +1,4 @@
-/** 
+/**
  * Confirms that all rows, columns, and squares add up to 45
  * 1 + 2 + 3 + 4 + 5 + 6 + 7 + 8 + 9 = 45
 */

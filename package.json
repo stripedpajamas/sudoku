@@ -2,9 +2,9 @@
   "name": "@twoseventythree/sudoku",
   "version": "1.0.0",
   "description": "PoC, solves most sudoku puzzles",
-  "main": "index.js",
+  "main": "sudoku.js",
   "scripts": {
-    "test": "standard ."
+    "test": "standard"
   },
   "keywords": [],
   "author": "Peter Squicciarini <stripedpajamas273@gmail.com>",

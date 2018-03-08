@@ -15,7 +15,7 @@ const findSquare = (x, y) => {
     5: ['63', '64', '65', '73', '74', '75', '83', '84', '85'],
     6: ['06', '07', '08', '16', '17', '18', '26', '27', '28'],
     7: ['36', '37', '38', '46', '47', '48', '56', '57', '58'],
-    8: ['66', '67', '68', '76', '77', '78', '86', '87', '88'],
+    8: ['66', '67', '68', '76', '77', '78', '86', '87', '88']
   }
   const square = Object.keys(allSquares).find(squareIdx => allSquares[squareIdx].includes(`${x}${y}`))
   const squareIdx = allSquares[square].findIndex(xy => xy === `${x}${y}`)
@@ -36,7 +36,7 @@ const createPossibilityMap = (puzzle) => {
       const currentTileValue = tile
       if (currentTileValue !== 0) {
         // if tile is not blank, no need to process it
-        return;
+        return
       }
 
       const { square, squareIdx } = findSquare(rowIdx, tileIdx)
@@ -65,8 +65,8 @@ const createPossibilityMap = (puzzle) => {
  * Looks for sets of possibilities in same row/column/square
  * and removes those same entries from all other sets in the row/column/square.
  * Currently only looking for sets of 2
- * @param {object} puzzle 
- * @param {object} possibilityMap 
+ * @param {object} puzzle
+ * @param {object} possibilityMap
  */
 const prunePossibilities = (inputPuzzle, inputPossibilityMap) => {
   const puzzle = inputPuzzle
@@ -101,7 +101,6 @@ const prunePossibilities = (inputPuzzle, inputPossibilityMap) => {
           if (xy !== tileId && xy !== pairId) {
             const split = xy.split(',')
             const x = parseInt(split[0], 10)
-            const y = parseInt(split[1], 10)
             if (x === rowIdx) {
               possibilityMap[xy].possibilities = possibilityMap[xy].possibilities.filter(p => !targets.includes(p))
             }
@@ -139,7 +138,6 @@ const prunePossibilities = (inputPuzzle, inputPossibilityMap) => {
         Object.keys(possibilityMap).forEach((xy) => {
           if (xy !== tileId && xy !== pairId) {
             const split = xy.split(',')
-            const x = parseInt(split[0], 10)
             const y = parseInt(split[1], 10)
             if (y === columnIdx) {
               possibilityMap[xy].possibilities = possibilityMap[xy].possibilities.filter(p => !targets.includes(p))
@@ -185,7 +183,6 @@ const verifyValid = (puzzle) => {
 
   return rowsGood && columnsGood && squaresGood
 }
-
 
 module.exports = {
   findSquare,

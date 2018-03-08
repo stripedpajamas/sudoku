@@ -1,0 +1,15 @@
+{
+  "name": "@twoseventythree/sudoku",
+  "version": "1.0.0",
+  "description": "PoC, solves most sudoku puzzles",
+  "main": "index.js",
+  "scripts": {
+    "test": "standard ."
+  },
+  "keywords": [],
+  "author": "Peter Squicciarini <stripedpajamas273@gmail.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "standard": "^11.0.0"
+  }
+}
